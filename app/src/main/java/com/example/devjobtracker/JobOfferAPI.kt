@@ -5,7 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
-const val BASE_URL = "https://jobs.github.com/positions.json?"
+const val BASE_URL = "https://jobs.github.com/positions.json?location=sf&description=react" //All the job offers in SF area with REACT in the description
 
 interface JobOfferAPI {
     @GET("positions")

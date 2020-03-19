@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<List<JobOffer>>, t: Throwable) {
                 refreshLayout.isRefreshing = false;
+                // --- Debug ---
                 println("$$$!$!$!$$!$!!$$!$!$$$!$!$!$$!$!!!$!$!$!!$$!$!!$!$$!$!$$!!")
                 println(":: API call failed ::")
                 Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
@@ -46,7 +47,6 @@ class MainActivity : AppCompatActivity() {
                 println("$$$!$!$!$$!$!!$$!$!$$$!$!$!$$!$!!!$!$!$!!$$!$!!$!$$!$!$$!!")
                 println(":: Response Body ::")
                 println(jobOffers)
-                println("$$$!$!$!$$!$!!$$!$!$$$!$!$!$$!$!!!$!$!$!!$$!$!!$!$$!$!$$!!")
 
 
 

@@ -30,8 +30,11 @@ class MainActivity : AppCompatActivity() {
         refreshLayout.isRefreshing = true;
 
         JobOfferAPI().getPositions().enqueue(object: Callback<List<JobOffer>> {
+
             override fun onFailure(call: Call<List<JobOffer>>, t: Throwable) {
                 refreshLayout.isRefreshing = false;
+                println("$$$!$!$!$$!$!!$$!$!$$$!$!$!$$!$!!!$!$!$!!$$!$!!$!$$!$!$$!!")
+                println(":: API call failed ::")
                 Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
             }
 
@@ -39,17 +42,26 @@ class MainActivity : AppCompatActivity() {
                 refreshLayout.isRefreshing = false;
                 val jobOffers = response.body()
 
+                // --- Debug --
+                println("$$$!$!$!$$!$!!$$!$!$$$!$!$!$$!$!!!$!$!$!!$$!$!!$!$$!$!$$!!")
+                println(":: Response Body ::")
+                println(jobOffers)
+                println("$$$!$!$!$$!$!!$$!$!$$$!$!$!$$!$!!!$!$!$!!$$!$!!$!$$!$!$$!!")
+
+
+
                 jobOffers?.let{
                     showJobOffers(jobOffers)
                 }
 
             }
+
         } )
     }
 
 
     private fun showJobOffers(jobOffers: List<JobOffer>) {
         recyclerViewOffers.layoutManager = LinearLayoutManager(this)
-        recyclerViewOffers.adapter = JobOfferAdapter(jobOffers)
+        recyclerViewOffers.adapter = JobOffersAdapter(jobOffers)
     }
 }

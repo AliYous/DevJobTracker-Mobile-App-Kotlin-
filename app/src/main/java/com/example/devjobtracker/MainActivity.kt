@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     private fun fetchJobOffers() {
         refreshLayout.isRefreshing = true;
 
-        JobOfferAPI().getPositions().enqueue(object: Callback<List<JobOffer>> {
+        JobOfferAPI().getPositions("react").enqueue(object: Callback<List<JobOffer>> {
 
             override fun onFailure(call: Call<List<JobOffer>>, t: Throwable) {
                 refreshLayout.isRefreshing = false;

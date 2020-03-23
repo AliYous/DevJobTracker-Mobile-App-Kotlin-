@@ -8,8 +8,8 @@
     card_view:contentPadding="8dp"
     card_view:cardCornerRadius="8dp"
     card_view:cardElevation="8dp"
-    card_view:cardBackgroundColor="#0F9D58"
     android:layout_margin="8dp"
+    card_view:cardBackgroundColor="#0F9D58"
     >
 
     <!--Text View over Card View-->
@@ -22,5 +22,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#fff"/>
+    <ImageView
+        android:id="@+id/languageImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/ic_launcher_background"/>
 
 </androidx.cardview.widget.CardView>

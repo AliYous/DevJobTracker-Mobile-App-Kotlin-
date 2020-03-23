@@ -21,15 +21,10 @@ class MainActivity : AppCompatActivity() {
             fetchJobOffers()
         }
 
-        //Creating languages manually to test
-        val language1 = ProgrammingLanguage("Python")
-        val language2 = ProgrammingLanguage("Ruby")
-        val language3 = ProgrammingLanguage("JavaScript")
-        val language4 = ProgrammingLanguage("React")
-        val language5 = ProgrammingLanguage("Java")
-        val progLanguages = listOf(language1, language2, language3, language4, language5)
+        //Test Languages
+
         //to fetch the offers whenever the ui is displayed
-        showProgLanguages(progLanguages)
+        showProgLanguages(fetchProgLanguages())
         fetchJobOffers()
     }
 
@@ -43,30 +38,28 @@ class MainActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<List<JobOffer>>, t: Throwable) {
                 refreshLayout.isRefreshing = false;
-                // --- Debug ---
-                println("$$$!$!$!$$!$!!$$!$!$$$!$!$!$$!$!!!$!$!$!!$$!$!!$!$$!$!$$!!")
-                println(":: API call failed ::")
                 Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
             }
 
             override fun onResponse(call: Call<List<JobOffer>>, response: Response<List<JobOffer>>) {
                 refreshLayout.isRefreshing = false;
                 val jobOffers = response.body()
-
-                // --- Debug --
-                println("$$$!$!$!$$!$!!$$!$!$$$!$!$!$$!$!!!$!$!$!!$$!$!!$!$$!$!$$!!")
-                println(":: Response Body ::")
-                println(jobOffers)
-
-
-
                 jobOffers?.let{
                     showJobOffers(jobOffers)
                 }
-
             }
-
         } )
+    }
+
+    fun fetchProgLanguages(): List<ProgrammingLanguage> {
+        //Creating languages manually to test
+        val language1 = ProgrammingLanguage("Python")
+        val language2 = ProgrammingLanguage("Ruby")
+        val language3 = ProgrammingLanguage("JavaScript")
+        val language4 = ProgrammingLanguage("React")
+        val language5 = ProgrammingLanguage("Java")
+        val progLanguages = listOf(language1, language2, language3, language4, language5)
+        return progLanguages
     }
 
 

@@ -9,18 +9,18 @@
     card_view:cardCornerRadius="8dp"
     card_view:cardElevation="8dp"
     card_view:cardBackgroundColor="#0F9D58"
-    android:layout_margin="1dp"
+    android:layout_margin="8dp"
     >
 
     <!--Text View over Card View-->
     <TextView
         android:id="@+id/textViewTitleLang"
         android:layout_gravity="center"
-    android:layout_marginTop="4dp"
-    android:layout_marginBottom="4dp"
-    android:textSize="22dp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textColor="#fff"/>
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:textSize="22dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"/>
 
 </androidx.cardview.widget.CardView>

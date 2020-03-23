@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textColor="#1A1A1A"
+        android:paddingBottom="10dp"
         />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewLanguages"
@@ -23,8 +24,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="10dp"/>
 
+
+    <!-- jobOffers -->
+    <TextView
+        android:id="@+id/TextViewOffers"
+        android:text="Latest Positions Available"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#1A1A1A"
+        android:paddingBottom="10dp"
+        />
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"

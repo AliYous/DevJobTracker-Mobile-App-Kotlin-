@@ -7,6 +7,24 @@
     android:padding="10dp"
     >
 
+    <!-- Most popular languages -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:text="Popular Technologies"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#1A1A1A"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewLanguages"
+        android:scrollbars="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -14,27 +32,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
-
-        <!-- Most popular languages -->
-        <TextView
-            android:id="@+id/textViewTitle"
-            android:text="Popular Technologies"
-            android:textSize="20sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textColor="#1A1A1A"
-            />
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewLanguages"
-            android:scrollbars="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
-
-
-
 
         <!-- this layout allows to refresh the view when the user swipes down-->
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

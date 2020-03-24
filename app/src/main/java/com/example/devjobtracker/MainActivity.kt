@@ -11,6 +11,7 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -19,7 +20,11 @@ class MainActivity : AppCompatActivity() {
         refreshLayout.setOnRefreshListener {
             fetchJobOffers()
         }
+
+        //Test Languages
+
         //to fetch the offers whenever the ui is displayed
+        showProgLanguages(fetchProgLanguages())
         fetchJobOffers()
     }
 
@@ -28,40 +33,46 @@ class MainActivity : AppCompatActivity() {
     //Fetches all Offers (Positions) from the API
     private fun fetchJobOffers() {
         refreshLayout.isRefreshing = true;
-
         JobOfferAPI().getPositions().enqueue(object: Callback<List<JobOffer>> {
 
             override fun onFailure(call: Call<List<JobOffer>>, t: Throwable) {
                 refreshLayout.isRefreshing = false;
-                // --- Debug ---
-                println("$$$!$!$!$$!$!!$$!$!$$$!$!$!$$!$!!!$!$!$!!$$!$!!$!$$!$!$$!!")
-                println(":: API call failed ::")
                 Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
             }
 
             override fun onResponse(call: Call<List<JobOffer>>, response: Response<List<JobOffer>>) {
                 refreshLayout.isRefreshing = false;
                 val jobOffers = response.body()
-
-                // --- Debug --
-                println("$$$!$!$!$$!$!!$$!$!$$$!$!$!$$!$!!!$!$!$!!$$!$!!$!$$!$!$$!!")
-                println(":: Response Body ::")
-                println(jobOffers)
-
-
-
                 jobOffers?.let{
                     showJobOffers(jobOffers)
                 }
-
             }
-
         } )
+    }
+
+    fun fetchProgLanguages(): List<ProgrammingLanguage> {
+        //Creating languages manually to test
+        val python = ProgrammingLanguage("Python", R.drawable.python)
+        val java = ProgrammingLanguage("Java", R.drawable.java)
+        val ruby = ProgrammingLanguage("Ruby", R.drawable.ruby)
+        val csharp = ProgrammingLanguage("C#", R.drawable.csharp)
+        val javascript = ProgrammingLanguage("JavaScript", R.drawable.javascript)
+        val swift = ProgrammingLanguage("Swift", R.drawable.swift)
+        val angular = ProgrammingLanguage("AngularJS", R.drawable.angular)
+        val node = ProgrammingLanguage("nodeJS", R.drawable.nodejs)
+
+        val progLanguages = listOf(python, java, ruby, csharp, javascript, swift, angular,  node)
+        return progLanguages
     }
 
 
     private fun showJobOffers(jobOffers: List<JobOffer>) {
         recyclerViewOffers.layoutManager = LinearLayoutManager(this)
         recyclerViewOffers.adapter = JobOffersAdapter(jobOffers)
+    }
+
+    private fun showProgLanguages(progLanguages: List<ProgrammingLanguage>) {
+        recyclerViewLanguages.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        recyclerViewLanguages.adapter = ProgrammingLanguageAdapter(progLanguages)
     }
 }

@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
     //Fetches all Offers (Positions) from the API
     private fun fetchJobOffers() {
         refreshLayout.isRefreshing = true;
-
         JobOfferAPI().getPositions().enqueue(object: Callback<List<JobOffer>> {
 
             override fun onFailure(call: Call<List<JobOffer>>, t: Throwable) {

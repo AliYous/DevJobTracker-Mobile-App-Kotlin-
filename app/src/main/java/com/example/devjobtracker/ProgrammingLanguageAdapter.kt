@@ -1,10 +1,12 @@
 package com.example.devjobtracker
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.layout_language.view.*
+import kotlinx.android.synthetic.main.layout_offer.view.*
 
 class ProgrammingLanguageAdapter(private val programmingLanguages : List<ProgrammingLanguage>) : RecyclerView.Adapter<ProgrammingLanguageAdapter.ProgrammingLanguageViewHolder>() {
 

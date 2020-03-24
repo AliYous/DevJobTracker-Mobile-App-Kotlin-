@@ -20,8 +20,8 @@ class JobOffersAdapter(private val jobOffers : List<JobOffer>) : RecyclerView.Ad
     override fun onBindViewHolder(holder: JobOfferViewHolder, position: Int) {
         val jobOffer = jobOffers[position]
 
-        holder.view.textViewTitle.text = jobOffer.title  //Binds title data to the view (txtView having the id : textWiewTitle in layout_offer.xml)
-        holder.view.textViewLocation.text = jobOffer.body
+        holder.view.textViewTitle.text = jobOffer.title.subSequence(0,10)
+        holder.view.textViewLocation.text = jobOffer.body.subSequence(0,10) //Pour réduire a 50 le nb de char en attendant d'avoir la vraie data
         //We need to bind the data the same exact way for all of the JobOffer's class attributes, I'm just testing with this for now
 
         //Will show only if the offer is 'new', need to write a function that changes the new variable from true to false based on the 'created_at' date

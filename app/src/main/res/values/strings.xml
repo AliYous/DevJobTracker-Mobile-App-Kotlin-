@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DevJobTracker</string>
+    <string name="offer_name">Offer Name</string>
+    <string name="more_info">More Info</string>
+    <string name="location">Location</string>
+    <string name="company">Company</string>
+    <string name="full_time">Full Time</string>
 </resources>

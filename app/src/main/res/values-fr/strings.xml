@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DevJobTracker</string>
+    <string name="offer_name">Nom de l\'offre</string>
+    <string name="more_info">Plus d\'info</string>
+    <string name="location">Lieu</string>
+    <string name="company">Entreprise</string>
+    <string name="full_time">Temps plein</string>
+</resources>

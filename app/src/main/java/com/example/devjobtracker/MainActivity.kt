@@ -53,12 +53,16 @@ class MainActivity : AppCompatActivity() {
 
     fun fetchProgLanguages(): List<ProgrammingLanguage> {
         //Creating languages manually to test
-        val language1 = ProgrammingLanguage("Python")
-        val language2 = ProgrammingLanguage("Ruby")
-        val language3 = ProgrammingLanguage("JavaScript")
-        val language4 = ProgrammingLanguage("React")
-        val language5 = ProgrammingLanguage("Java")
-        val progLanguages = listOf(language1, language2, language3, language4, language5)
+        val python = ProgrammingLanguage("Python", R.drawable.python)
+        val java = ProgrammingLanguage("Java", R.drawable.java)
+        val ruby = ProgrammingLanguage("Ruby", R.drawable.ruby)
+        val csharp = ProgrammingLanguage("C#", R.drawable.csharp)
+        val javascript = ProgrammingLanguage("JavaScript", R.drawable.javascript)
+        val swift = ProgrammingLanguage("Swift", R.drawable.swift)
+        val angular = ProgrammingLanguage("AngularJS", R.drawable.angular)
+        val node = ProgrammingLanguage("nodeJS", R.drawable.nodejs)
+
+        val progLanguages = listOf(python, java, ruby, csharp, javascript, swift, angular,  node)
         return progLanguages
     }
 

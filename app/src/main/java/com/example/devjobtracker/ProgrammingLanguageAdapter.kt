@@ -19,6 +19,7 @@ class ProgrammingLanguageAdapter(private val programmingLanguages : List<Program
     override fun onBindViewHolder(holder: ProgrammingLanguageViewHolder, position: Int) {
         val programmingLanguage = programmingLanguages[position]
         holder.view.textViewTitleLang.text = programmingLanguage.name
+        holder.view.languageImage.setImageResource(programmingLanguage.image)
     }
 
 

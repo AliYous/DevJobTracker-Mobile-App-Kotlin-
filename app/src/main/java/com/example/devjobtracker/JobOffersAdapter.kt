@@ -1,5 +1,6 @@
 package com.example.devjobtracker
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -27,7 +28,7 @@ class JobOffersAdapter(private val jobOffers : List<JobOffer>) : RecyclerView.Ad
         //We need to bind the data the same exact way for all of the JobOffer's class attributes, I'm just testing with this for now
 
         /*holder.view.buttonSeeOffer.setOnClickListener(({
-            val intent = Intent(this, SeeOfferActivity::class.java)
+            val intent = Intent(Context context, SeeOfferActivity::class.java)
             //intent.putExtra("jobOffer", jobOffer)
             startActivity(intent)
         }))*/
